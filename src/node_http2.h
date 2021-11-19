@@ -39,10 +39,12 @@ constexpr size_t kDefaultMaxSettings = 10;
 constexpr uint64_t kDefaultMaxSessionMemory = 10000000;
 
 // These are the standard HTTP/2 defaults as specified by the RFC
+// On the contrary, INITIAL_WINDOW_SIZE has been increased from
+// 2^16-1 to 2^22-1 in order to improve bandwith.
 constexpr uint32_t DEFAULT_SETTINGS_HEADER_TABLE_SIZE = 4096;
 constexpr uint32_t DEFAULT_SETTINGS_ENABLE_PUSH = 1;
 constexpr uint32_t DEFAULT_SETTINGS_MAX_CONCURRENT_STREAMS = 0xffffffffu;
-constexpr uint32_t DEFAULT_SETTINGS_INITIAL_WINDOW_SIZE = 65535;
+constexpr uint32_t DEFAULT_SETTINGS_INITIAL_WINDOW_SIZE = 4194303;
 constexpr uint32_t DEFAULT_SETTINGS_MAX_FRAME_SIZE = 16384;
 constexpr uint32_t DEFAULT_SETTINGS_MAX_HEADER_LIST_SIZE = 65535;
 constexpr uint32_t DEFAULT_SETTINGS_ENABLE_CONNECT_PROTOCOL = 0;
